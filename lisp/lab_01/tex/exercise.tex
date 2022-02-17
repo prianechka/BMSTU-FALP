@@ -1,0 +1,318 @@
+\chapter*{Практическое задание}
+
+\section*{Задание 1}
+Представить следующие списки в виде списочных ячеек:
+\begin{enumerate}
+	\item '(open close halph);
+	\item '((open1)(close2)(halph3));
+	\item '((TOOL)(call));
+	\item '((TOOL1)((call2))((sell)));
+	\item '((one) for all (and (me (for you))));
+	\item '(((TOOL)(call))((sell)));
+\end{enumerate}
+
+Решение прикреплено к отчёту на отдельном листе.
+
+\section*{Задание 2}
+Используя только функции CAR и CDR, написать выражения, возвращающие:
+\begin{enumerate}
+	\item Второй элемент заданного списка;
+	\item Третий элемент заданного списка;
+	\item Четвёртый элемент заданного списка;
+\end{enumerate}
+
+\subsection*{Решения}
+\textbf{Второй элемент}:
+\begin{lstlisting}{autogobble=true}
+(car (cdr '(1 2 3 4 5)))
+\end{lstlisting}
+
+\textbf{Третий элемент}:
+\begin{lstlisting}
+(car (cdr (cdr '(1 2 3 4 5))))
+\end{lstlisting}
+	
+\textbf{Четвёртый элемент}:
+\begin{lstlisting}
+(car (cdr (cdr (cdr '(1 2 3 4 5)))))
+\end{lstlisting}
+
+\section*{Задание 3}
+
+\begin{flushleft}
+	Что будет в результате вычисления выражений?
+\end{flushleft}
+
+\begin{lstlisting}
+(CAADR '((blue cube)(red pyramid)))
+\end{lstlisting}
+Результат: \texttt{red}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(CDAR '((abc)(def)(ghi)))
+\end{lstlisting}
+Результат: \texttt{Nil}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(CADR '((abc)(def)(ghi)))
+\end{lstlisting}
+Результат: \texttt{(def)}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(CADDR '((abc)(def)(ghi)))
+\end{lstlisting}
+Результат: \texttt{(ghi)}.
+\vspace{10mm}
+
+\section*{Задание 4}
+Напишите результат вычисления выражений и объясните, как он получен:
+
+\begin{lstlisting}
+(list 'Fred 'and 'Wilma)
+\end{lstlisting}
+Результат: \texttt{(Fred and Wilma)}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(list 'Fred '(and Wilma))
+\end{lstlisting}
+Результат: \texttt{(Fred (and Wilma))}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(cons Nil Nil)
+\end{lstlisting}
+Результат: \texttt{(Nil)}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(cons T Nil)
+\end{lstlisting}
+Результат: \texttt{(T)}.
+\vspace{10mm}
+
+\begin{lstlisting}
+(cons Nil T)
+\end{lstlisting}
+Результат: \texttt{(Nil . T)}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(list Nil)
+\end{lstlisting}
+Результат: \texttt{(Nil)}.
+\vspace{10mm}
+
+\begin{lstlisting}
+(cons '(T) Nil)
+\end{lstlisting}
+Результат: \texttt{((T))}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(list '(one two) '(free temp))
+\end{lstlisting}
+Результат: \texttt{((one two) (free temp))}.
+\vspace{10mm}
+
+\begin{lstlisting}
+(cons 'Fred '(and Wilma))
+\end{lstlisting}
+Результат: \texttt{(Fred and Wilma)}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(cons 'Fred '(Wilma))
+\end{lstlisting}
+Результат: \texttt{(fred Wilma)}.
+\vspace{10mm}
+
+\begin{lstlisting}
+(list Nil Nil)
+\end{lstlisting}
+Результат: \texttt{(Nil Nil)}.
+\vspace{10mm}
+
+
+\begin{lstlisting}
+(list Nil T)
+\end{lstlisting}
+Результат: \texttt{(Nil T)}.
+\vspace{10mm}
+
+\begin{lstlisting}
+(cons T (list Nil))
+\end{lstlisting}
+Результат: \texttt{(T Nil)}.
+\vspace{10mm}
+
+\begin{lstlisting}
+(list '(T) Nil)
+\end{lstlisting}
+Результат: \texttt{((T) Nil)}.
+\vspace{10mm}
+
+\begin{lstlisting}
+(cons '(one two) '(free temp))
+\end{lstlisting}
+Результат: \texttt{((one two) free temp)}.
+\vspace{10mm}
+
+\section*{Задание 5}
+\begin{flushleft}
+	Напишите лямбда-выражение и соответствующую функцию:
+\end{flushleft}
+
+\vspace{10mm}
+
+\begin{flushleft}
+	Напишите функцию (f ar1 ar2 ar3 ar4), возвращающую список: 
+	
+	((ar1 ar2) (ar3 ar4))
+	
+	
+	\textbf{Лямбда-выражение}:
+\end{flushleft}
+
+\begin{lstlisting}
+((lambda (ar1 ar2 ar3 ar4) 
+(list(list ar1 ar2) (list ar3 ar4))) 
+'ar1 'ar2 'ar3 'ar4)
+\end{lstlisting}
+\vspace{5mm}
+
+\begin{flushleft}
+	\textbf{Соответствующая функция}:
+\end{flushleft}
+
+\begin{lstlisting}
+(defun f (ar1 ar2 ar3 ar4) 
+(list
+(list ar1 ar2) 
+(list ar3 ar4)))
+\end{lstlisting}
+
+\vspace{5mm}
+
+\begin{flushleft}
+	Напишите функцию (f ar1 ar2), возвращающую список: 
+	((ar1)(ar2))
+	
+	
+	
+	\textbf{Лямбда-выражение}:
+\end{flushleft}
+
+\begin{lstlisting}
+((lambda (ar1 ar2) 
+(cons (cons ar1 Nil) 
+(cons (cons ar2 Nil) Nil)) 
+'ar1 'ar2)
+\end{lstlisting}
+\vspace{5mm}
+
+\begin{flushleft}
+	\textbf{Соответствующая функция}:
+\end{flushleft}
+
+\begin{lstlisting}
+(defun f (ar1 ar2) 
+(cons (cons ar1 Nil) 
+(cons (cons ar2 Nil) Nil))
+\end{lstlisting}
+
+
+\vspace{10mm}
+
+\begin{flushleft}
+	Напишите функцию (f ar1), возвращающую список: (((ar1)))
+	
+	
+	\textbf{Лямбда-выражение}:
+\end{flushleft}
+
+\begin{lstlisting}
+((lambda (ar1) 
+(cons (cons (cons ar1 Nil) Nil) Nil)) 
+'ar1)
+\end{lstlisting}
+
+\begin{flushleft}
+	\textbf{Соответствующая функция}:
+\end{flushleft}
+
+\begin{lstlisting}
+(defun f (ar1) (cons (cons (cons ar1 Nil) Nil) Nil))
+\end{lstlisting}
+
+Представление в виде списочных ячеек прикреплено к отчёту.
+
+\chapter*{Ответы на теоретические вопросы} 
+
+\section*{Элементы языка: определение, синтаксис, представление в памяти}
+Элементы языка --- атомы и точечные пары (структуры, которые строятся с помощью унифицированных структур - блоков памяти - бинарных узлов). Атомы бывают:
+\begin{itemize}
+	\item \textbf{символы} (идентификаторы) --- синтаксически представляют собой набор литер (последовательность букв и цифр, начинающаяся с буквы; могут быть связанные и несвязанные);
+	\item \textbf{специальные символы} --- используются для обозначения <<логических>> констант (\texttt{T}, \texttt{Nil});
+	\item \textbf{самоопределимые атомы} --- числа, строки - последовательность символов в кавычках (\texttt{"abc"}).
+\end{itemize}
+
+\textbf{Синтаксис элементов языка}:
+\vspace{5mm}
+
+
+Точечная пара ::= (<атом> . <атом>) | (<точечная пара> . <атом>) | (<атом> . <точечная пара>) | (<точечная пара> . <точечная пара>)
+
+Список ::= <пустой список> | <непустой список>, где 
+
+<пустой список> ::= () | Nil,
+
+<непустой список> ::= (<S-выражение>. <список>),
+
+\vspace{5mm}
+
+
+Список --- частный случай S-выражения.
+
+Синтаксически любая структура (точечная пара или список) заключается в круглые скобки:
+\texttt{(A . B)} --- точечная пара.
+\texttt{(A)} --- список из одного элемента.
+Непустой список --- \texttt{(A . (B . (C . (D . Nil))))} или \texttt{(A B C D)}
+Пустой список --- \texttt{Nil} или \texttt{()}.
+
+Элементы списка могут быть списками, например --- \texttt((A (B C) (D (E)))). Таким образом, синтаксически наличие скобок является признаком структуры --- списка или точечной пары.
+
+Любая непустая структура Lisp в памяти представляется  списковой ячейкой, хранящий два указателя: на голову (первый элемент) и хвост (все остальное).
+
+\section*{Особенности языка Lisp. Структура программы. Символ апостроф}
+Lisp - язык символьной обработки. 
+В Lisp программа и данные представлены списками.
+По умолчанию список считается вычислимой формой, в которой 1 элемент - название функции, остальные элементы - аргументы функции.
+
+Т.к. и программа и данные представлены списками, то их нужно как-то различать. 
+Для этого была создана функция quote, а ' - ее сокращенное обозначение. 
+quote - функция, блокирующая вычисление.
+
+
+\section*{Базис языка Lisp. Ядро языка}
+Базис - минимальный набор конструкций языка и структур данных, который позволяет решить любую задачу.
+
+Базис в Lisp образуют:
+\begin{itemize}
+	\item атомы;
+	\item структуры;
+	\item базовые функции;
+	\item функционалы.
+\end{itemize}
