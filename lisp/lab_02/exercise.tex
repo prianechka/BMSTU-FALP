@@ -1,0 +1,261 @@
+\chapter{Практическое задание}
+
+\section*{Задание 1}
+Составить диаграмму вычисления следующих выражений:
+
+\begin{lstlisting}[style={scheme}]
+1. 
+(equal 3 (abs -3))
+	3 %\as% 3
+	(abs -3)
+		-3 %\as% -3
+		abs %\at% -3
+		3
+	equal %\at% 3 и 3
+	T
+\end{lstlisting}
+
+\begin{lstlisting}[style={scheme}]
+2. 
+(equal (+ 1 2) 3)
+	(+ 1 2)
+		1 %\as% 1
+		2 %\as% 2
+		+ %\at% 1 и 2
+		3
+	3 %\as% 3
+	equal %\at% 3 и 3
+	T
+\end{lstlisting}
+
+\clearpage
+\begin{lstlisting}[style={scheme}]
+3. 
+(equal (* 4 7) 21)
+	(* 4 7)
+		4 %\as% 4
+		7 %\as% 7
+		* %\at% 4 и 7
+		28
+	21 %\as% 21
+	equal %\at% 28 и 21
+	Nil
+\end{lstlisting}
+
+\begin{lstlisting}[style={scheme}]
+4. 
+(equal (* 2 3) (+ 7 2))
+	(* 2 3)
+		2 %\as% 2
+		3 %\as% 3
+		* %\at% 2 и 3
+		6
+	(+ 7 2)
+		7 %\as% 7
+		2 %\as% 2
+		+ %\at% 7 и 2
+		9
+	equal %\at% 6 и 9
+	Nil
+\end{lstlisting}
+
+\clearpage
+\begin{lstlisting}[style={scheme}]
+5. 
+(equal (- 7 3) (* 3 2))
+	(- 7 3)
+		7 %\as% 7
+		3 %\as% 3
+		- %\at% 7 и 3
+		4
+	(* 3 2)
+		3 %\as% 3
+		2 %\as% 2
+		* %\at% 3 и 2
+		6
+	equal %\at% 4 и 6
+	Nil
+\end{lstlisting}
+
+\begin{lstlisting}[style={scheme}]
+6. 
+(equal (abs (- 2 4)) 3)
+	(abs (- 2 4))
+		(- 2 4)
+			2 %\as% 2
+			4 %\as% 4
+			- %\at% 2 и 4
+			-2
+		abs %\at% -2
+		2
+	3 %\as% 3
+	equal %\at% 2 и 3
+	Nil
+\end{lstlisting}
+\clearpage
+\section*{Задание 2}
+Написать функцию, вычисляющую гипотенузу прямоугольного
+треугольника по заданным катетам и составить диаграмму её вычисления.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/2.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\begin{lstlisting}[style={scheme}]
+(comp-hyp  3 4)
+	(sqrt (+ (* 3 3) (* 4 4)))
+		(+ (* 3 3) (* 4 4))
+			(* 3 3)
+				3 %\as% 3
+				3 %\as% 3
+				* %\at% 3 и 3
+				9
+			(* 4 4)
+				4 %\as% 4
+				4 %\as% 4
+				* %\at% 4 и 4
+				16
+		+ %\at% 9 и 16
+		25
+	sqrt %\at% 25
+	5
+\end{lstlisting}
+\clearpage
+\section*{Задание 3}
+Написать функцию, вычисляющую объем параллелепипеда по 3-м его сторонам, и
+составить диаграмму ее вычисления.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/3.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\begin{lstlisting}[style={scheme}]
+(volume-par 3 4 5)
+	(* 3 4 5)
+		3 %\as% 3
+		4 %\as% 4
+		5 %\as% 5
+		* %\at% 3, 4, 5
+		60
+\end{lstlisting}
+
+\section*{Задание 4}
+Каковы результаты вычисления следующих выражений?(объяснить возможную ошибку и
+варианты ее устранения)
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/4.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 5}
+Написать функцию longer\_then от двух списков-аргументов, которая возвращает Т, если
+первый аргумент имеет большую длину.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/5.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 6}
+Каковы результаты вычисления следующих выражений?
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/6.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 7}
+Дана функция (defun mystery (x) (list (second x) (first x))).
+Какие результаты вычисления следующих выражений? 
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/7.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+
+\section*{Задание 8}
+Написать функцию, которая переводит температуру в системе Фаренгейта
+температуру по Цельсию?
+
+Как бы назывался роман Р.Брэдбери "+451 по Фаренгейту" в системе по Цельсию?
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/8.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 9}
+Что получится при вычисления каждого из выражений?
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/9.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\chapter*{Дополнительные задания}
+
+\section*{Задание 1}
+Написать функцию, вычисляющую катет по заданной гипотенузе и другому катету
+прямоугольного треугольника, и составить диаграмму ее вычисления
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/10.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+
+\section*{Задание 2}
+Написать функцию, вычисляющую площадь трапеции по ее основаниям и
+высоте, и составить диаграмму ее вычисления.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/11.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+
+\chapter*{Теоретические вопросы}
+
+\section*{Базис языка \texttt{Lisp}}
+Базис - минимальный набор конструкций языка и структур данных, который позволяет решить любую задачу.
+
+Базис в Lisp образуют:
+\begin{itemize}
+	\item атомы;
+	\item структуры;
+	\item базовые функции;
+	\item функционалы.
+\end{itemize}
+
+\section*{Классификация функций языка {\texttt{Lisp}}}
+
+Функции в языке {\texttt{Lisp}}:
+\begin{itemize}
+	\item Базовые/чистые функции -- фиксированное кол-во аргументов, для определенного набора аргументов один фиксированный результат.
+	\item Формы - функции, которые принимают произвольное количество аргументов или по разному обрабатывают аргументы.
+	\item Функционалы (высшего порядка) - в качестве аргумента принимают функцию или возвращают функцию.
+\end{itemize}
+
+\section*{Способы создания функций}
+
+С помощью макро определения \texttt{defun} или с использованием Лямбда-нотации (функция без имени).
+
+\section*{Функции {\texttt{car, cdr}}}
+
+Являются базовыми функциями доступа к данным. 
+
+{\texttt{car}} принимает точечную пару или список в качестве аргумента и возвращает первый элемент или {\texttt{Nil}}.
+
+{\texttt{cdr}} -- возвращает все элементы, кроме первого или {\texttt{Nil}}.
+
+\section*{Функции {\texttt{list, cons}}}
+
+Являются функциями создания списков ({\texttt{cons}} -- базовая, {\texttt{list}} -- нет). 
+
+{\texttt{cons}} создаёт списочную ячейку и устанавливает два указателя на аргументы. 
+
+{\texttt{list}} принимает переменное число аргументов и возвращает список, элементами которого являются аргументы, переданные в функцию.
