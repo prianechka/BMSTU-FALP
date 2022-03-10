@@ -1,0 +1,42 @@
+(defun random_score ()
+(list (+ (random 5) 1) (+ (random 5) 1)))
+
+(defun check_sum_to_replay(result)
+(if (or (equal result '(6 6)) (equal result '(1 1))) T NIL))
+
+(defun print_result_to_replay (result)
+(print "Score: ") 
+(prin1 result) 
+(print "The dice will be rerolled...") 
+(print "-------"))
+
+(defun make_player_score ()
+(let* ((result (random_score)))
+    (if (check_sum_to_replay result) 
+        (and (print_result_to_replay result) 
+            (make_player_score)) result)))
+
+(defun sum (result)
+(+ (first result) (second result)))
+
+(defun check_sum_to_win (result)
+(if (or (equal (sum result) 7) 
+(equal (sum result) 11)) T NIL))
+
+(defun print_player (result)
+(print "Score: ")
+(PRIN1 result))
+
+(defun play()
+(print "---First player---")
+(let* ((first_val (make_player_score)))
+    (if (check_sum_to_win first_val) (and (print_player first_val) "First player won!") 
+        (and (print_player first_val)
+            (print "------------------")
+            (print "---Second player---")
+             (let* ((second_val (make_player_score)))
+                (if (check_sum_to_win second_val) (and (print_player second_val) "Second player won!")
+                    (and (print_player second_val) 
+                        (if (>= (sum first_val) (sum second_val)) 
+                            "First player won!" "Second player won!")
+                        )))))))

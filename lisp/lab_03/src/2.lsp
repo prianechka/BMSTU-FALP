@@ -1,0 +1,1 @@
+(defun next-val (val) (cond ((>= val 0) (+ 1 val)) ((< val 0) (- val 1))))

@@ -1,0 +1,1 @@
+(defun comp(a b) (>= a b))

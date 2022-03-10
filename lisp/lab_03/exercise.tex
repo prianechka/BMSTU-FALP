@@ -1,0 +1,138 @@
+\chapter*{Практическое задание}
+
+\section*{Задание 1}
+Написать функцию, которая принимает целое число и возвращает первое
+четное число, не меньшее аргумента.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/1.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 2}
+Написать функцию, которая принимает число и возвращает число
+того же знака, но с модулем на 1 больше модуля аргумента.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/2.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 3}
+Написать функцию, которая принимает два числа и возвращает
+список из этих чисел, расположенный по возрастанию.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/3.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\clearpage
+
+\section*{Задание 4}
+Написать функцию, которая принимает три числа и возвращает Т только
+тогда, когда первое число расположено между вторым и третьим.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/4.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 5}
+Каков результат вычисления следующих выражений?
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/5.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 6}
+Написать предикат, который принимает два числа-аргумента и возвращает
+Т, если первое число не меньше второго.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/6.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\clearpage
+
+\section*{Задание 7}
+Какой из следующих двух вариантов предиката ошибочен и почему?
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/7.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+
+\section*{Задание 8}
+Решить задачу 4, используя для ее решения конструкции
+IF, COND, AND/OR.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/8.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\clearpage
+
+\section*{Задание 9}
+Переписать функцию how-alike, приведенную в лекции и использующую COND, используя
+только конструкции IF, AND/OR.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/9.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+
+\chapter*{Теоретические вопросы}
+
+\section*{Базис языка \texttt{Lisp}}
+Базис - минимальный набор конструкций языка и структур данных, который позволяет решить любую задачу.
+
+Базис в Lisp образуют:
+\begin{itemize}
+	\item атомы;
+	\item структуры;
+	\item базовые функции;
+	\item функционалы.
+\end{itemize}
+
+\section*{Классификация функций языка {\texttt{Lisp}}}
+
+Функции в языке {\texttt{Lisp}}:
+\begin{itemize}
+	\item Базовые/чистые функции -- фиксированное кол-во аргументов, для определенного набора аргументов один фиксированный результат.
+	\item Формы - функции, которые принимают произвольное количество аргументов или по разному обрабатывают аргументы.
+	\item Функционалы (высшего порядка) - в качестве аргумента принимают функцию или возвращают функцию.
+\end{itemize}
+
+\section*{Способы создания функций}
+
+С помощью макро определения \texttt{defun} или с использованием Лямбда-нотации (функция без имени).
+
+\section*{Работа функций \texttt{and}, \texttt{or}, \texttt{if}, \texttt{cond}}
+
+\subsection*{Функция \texttt{and}}
+
+Синтаксис: \code{(and expression-1 expression-2 ... expression-n)}
+
+Функция возвращает первое \texttt{expression}, результат вычисления которого = \texttt{Nil}. Если все не \texttt{Nil}, то возвращается результат вычисления последнего выражения.
+
+\subsection*{Функция \texttt{or}}
+
+Синтаксис: \code{(or expression-1 expression-2 ... expression-n)}
+
+Функция возвращает первое \texttt{expression}, результат вычисления которого не \texttt{Nil}. Если все \texttt{Nil}, то возвращается \texttt{Nil}.
+
+\subsection*{Функция \texttt{if}}
+
+Синтаксис: \code{(if condition t-expression f-expression)}
+
+Если вычисленный предикат не \texttt{Nil}, то выполняется \texttt{t-expression}, иначе - \texttt{f-expression}.
+
+\subsection*{Функция \texttt{cond}}
+
+По порядку вычисляются и проверяются на равенство с \texttt{Nil} предикаты. Для первого предиката, который не равен \texttt{Nil}, вычисляется находящееся с ним в списке выражение и возвращается его значение. Если все предикаты вернут \texttt{Nil}, то и \texttt{cond} вернет \texttt{Nil}.
