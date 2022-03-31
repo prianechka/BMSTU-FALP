@@ -1,0 +1,8 @@
+(defun swap-two-elements (i j lst)
+  (let ((lst-copy (copy-list lst)))
+    (and (< i (length lst)) (< j (length lst))
+         (let ((el1 (nth i lst))
+               (el2 (nth j lst)))
+           (setf (nth i lst-copy) el2)
+           (setf (nth j lst-copy) el1)
+           lst-copy))))

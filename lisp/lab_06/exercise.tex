@@ -1,0 +1,95 @@
+\chapter*{Практическое задание}
+
+\section*{Задание 1}
+Напишите функцию, которая уменьшает на 10 все числа из списка-аргумента этой
+функции.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/1.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 2}
+Напишите функцию, которая умножает на заданное число-аргумент все числа
+из заданного списка-аргумента, когда
+\begin{itemize}
+	\item все элементы списка --- числа;
+	\item элементы списка -- любые объекты.
+\end{itemize}
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/2.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 3}
+Написать функцию, которая по своему списку-аргументу lst определяет
+является ли он палиндромом (то есть равны ли lst и (reverse lst)).
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/3.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+
+\section*{Задание 4}
+Написать предикат set-equal, который возвращает t, если два его множества-
+аргумента содержат одни и те же элементы, порядок которых не имеет значения.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/4.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 5}
+Написать функцию которая получает как аргумент список чисел, а возвращает список
+квадратов этих чисел в том же порядке.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/5.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\section*{Задание 6}
+Напишите функцию, select-between, которая из списка-аргумента, содержащего только
+числа, выбирает только те, которые расположены между двумя указанными границами-
+аргументами и возвращает их в виде списка (упорядоченного по возрастанию списка чисел
+(+ 2 балла)).
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/6.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+\clearpage
+
+\section*{Задание 7}
+Написать функцию, вычисляющую декартово произведение двух своих списков-
+аргументов. ( Напомним, что А х В это множество всевозможных пар (a b), где а
+принадлежит А, принадлежит В.)
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/7.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+
+\section*{Задание 8}
+Почему так реализовано reduce, в чем причина?
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/8.lsp}
+\end{lstinputlisting}
+\FloatBarrier
+
+В первом случае сумма всех элементов равна 0, а во втором случае -- пустой массив, 
+следовательно, в нём нет элементов, значит, сумма всех элементов равна 0.
+
+\section*{Задание 9}
+Пусть list-of-list список, состоящий из списков. Написать функцию, которая вычисляет
+сумму длин всех элементов list-of-list, т.е. например для аргумента ((1 2) (3 4)) -> 4.
+
+\FloatBarrier
+\begin{lstinputlisting}[style={lsp}]{src/9.lsp}
+\end{lstinputlisting}
+\FloatBarrier

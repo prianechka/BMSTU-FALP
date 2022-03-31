@@ -1,0 +1,5 @@
+(defun square (lst &optional (result nil)) 
+(if (null lst) 
+    (my-reverse result) 
+    (square (cdr lst) (cons (* (first lst) (first lst)) result))
+))
